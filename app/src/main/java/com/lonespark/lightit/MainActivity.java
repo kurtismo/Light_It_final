@@ -12,5 +12,9 @@ public class MainActivity extends AppCompatActivity {
 
         System.out.println("I did it!");
 
+        for(int x = 0; x < 1000; x++) {
+            System.out.println("Billy sucks " + x + " dick(s)");
+        }
+
     }
 }
