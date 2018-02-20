@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LightIt.iml" filepath="$PROJECT_DIR$/LightIt.iml" />
+      <module fileurl="file://C:\Users\kurti\AndroidStudioProjects\LightIt_new\Light_It_final\LightIt.iml" filepath="C:\Users\kurti\AndroidStudioProjects\LightIt_new\Light_It_final\LightIt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Light_It_final.iml" filepath="$PROJECT_DIR$/Light_It_final.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\kurti\AndroidStudioProjects\LightIt_new\Light_It_final\app\app.iml" filepath="C:\Users\kurti\AndroidStudioProjects\LightIt_new\Light_It_final\app\app.iml" />
     </modules>
   </component>
 </project>
