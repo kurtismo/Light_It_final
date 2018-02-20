@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
         } else if (2==2){
             System.out.println("Kurtis is a bitch");
         }
-
         else {
             System.out.println("Kurtis is a bitch");
         }
