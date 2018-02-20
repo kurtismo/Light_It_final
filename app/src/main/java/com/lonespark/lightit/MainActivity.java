@@ -11,6 +11,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         System.out.println("I did it!");
+        if (1==1){
+            System.out.println("Kurtis is a bitch");
+        } else if (2==2){
+            System.out.println("Kurtis is a bitch");
+        }
+        else {
+            System.out.println("Kurtis is a bitch");
+        }
 
     }
 }
