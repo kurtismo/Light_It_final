@@ -19,7 +19,7 @@ public class GameView extends View {
     private Paint gridPaint;
     Rect rect = new Rect();
     private int[] colours = {Color.RED, Color.WHITE};
-    private boolean firstDraw = true;
+    boolean firstDraw = true;
 
     public GameView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
