@@ -2,6 +2,8 @@ package com.lonespark.lightit;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,19 +12,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        System.out.println("I did it!");
-        if (1==1){
-            System.out.println("Kurtis is a bitch");
-        } else if (2==2){
-            System.out.println("Kurtis is a bitch");
-        }
-        else {
-            System.out.println("Kurtis is a bitch");
-        }
+        ImageView playButton = findViewById(R.id.playIcon);
+        playButton.setClickable(true);
 
-        for(int x = 0; x < 1000; x++) {
-            System.out.println("Billy sucks " + x + " dick(s)");
-        }
-
-    }
+        playButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("Play game");
+            }
+        });
+      }
 }
