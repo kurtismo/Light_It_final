@@ -2,5 +2,8 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/aclonica</item>
+        <item>@font/raleway</item>
+        <item>@font/raleway_light</item>
+        <item>@font/raleway_thin</item>
     </array>
 </resources>
