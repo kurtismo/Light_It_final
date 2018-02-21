@@ -18,7 +18,7 @@ public class GameView extends View {
     private Random rand = new Random();
     private Paint gridPaint;
     Rect rect = new Rect();
-    private int[] colours = {Color.RED, Color.WHITE};
+    private int[] colours = {Color.parseColor("#00a6b6"), Color.WHITE};
     boolean firstDraw = true;
 
     public GameView(Context context, @Nullable AttributeSet attrs) {
@@ -34,7 +34,7 @@ public class GameView extends View {
         int colour;
         int width = this.getWidth();
         int screenHeight = this.getHeight();
-        int sideLength = (width / 5) - 50;
+        int sideLength = (width / 5);
 
         gridPaint.setStyle(Paint.Style.FILL);
         gridPaint.setAntiAlias(true);
@@ -48,7 +48,7 @@ public class GameView extends View {
                     rectanglex = sideLength * i;
                     rectangley = sideLength * j;
 
-                    rect = new Rect(rectanglex+(50), rectangley+(50), rectanglex+sideLength, rectangley+sideLength);
+                    rect = new Rect(rectanglex+(sideLength / 5), rectangley+(sideLength / 5), rectanglex+sideLength, rectangley+sideLength);
                     canvas.drawRect(rect, gridPaint);
                 }
             }
