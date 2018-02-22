@@ -3,7 +3,6 @@ package com.lonespark.lightit;
 
 public class Game {
     private int moveCount = 0;
-    private int movesRemaining = 50;
     boolean[][] mData = new boolean[6][6];
 
     public void colourSwitch(int x, int y) {
@@ -12,10 +11,6 @@ public class Game {
 
     public int getMoveCount() {
         return this.moveCount;
-    }
-
-    public int getMovesRemaining() {
-        return movesRemaining;
     }
 
     public void touch(double x, double y, int sideLength) {
@@ -30,7 +25,6 @@ public class Game {
                             if (i < 5) {colourSwitch(j, i+1);}
                             if (i > 0) {colourSwitch(j, i-1);}
                             moveCount++;
-                            movesRemaining--;
                         }
                 }
             }

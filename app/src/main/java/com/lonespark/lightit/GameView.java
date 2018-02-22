@@ -16,6 +16,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 import java.util.Random;
 
 import static java.lang.Math.PI;
@@ -23,6 +27,7 @@ import static java.lang.Math.floor;
 
 
 public class GameView extends View {
+    private InterstitialAd mInterstitialAd;
     Game mGame = new Game();
     private GestureDetector mGestureDetector;
     private Random rand = new Random();
@@ -34,6 +39,11 @@ public class GameView extends View {
 
     public GameView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+
+        mInterstitialAd = new InterstitialAd(getContext());
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
         gridPaint = new Paint();
         mGestureDetector = new GestureDetector(context, new MyGestureListener());
     }
@@ -47,7 +57,7 @@ public class GameView extends View {
         int screenHeight = this.getHeight();
 
         TextView txtMoves = ((GameActivity) getContext()).findViewById(R.id.txtMoves);
-        txtMoves.setText("Moves Remaining: " + mGame.getMovesRemaining());
+        txtMoves.setText("Moves: " + mGame.getMoveCount());
 
         sideLength = width/6;
         gridPaint.setStyle(Paint.Style.FILL);
@@ -91,14 +101,43 @@ public class GameView extends View {
         }
 
         if (mGame.checkWin()) {
-            SharedPreferences prefs = getContext().getSharedPreferences("highScore", Context.MODE_PRIVATE);
-            if ((mGame.getMoveCount() < prefs.getInt("ScoreKey", 0)) || (prefs.getInt("ScoreKey", 0) == 0)) {
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putInt("ScoreKey", mGame.getMoveCount());
-                editor.commit();
+            if (mInterstitialAd.isLoaded()) {
+                if (rand.nextInt(5) == 3) {
+                    mInterstitialAd.show();
+                    mInterstitialAd.setAdListener(new AdListener() {
+                        public void onAdClosed() {
+                            SharedPreferences prefs = getContext().getSharedPreferences("highScore", Context.MODE_PRIVATE);
+                            if ((mGame.getMoveCount() < prefs.getInt("ScoreKey", 0)) || (prefs.getInt("ScoreKey", 0) == 0)) {
+                                SharedPreferences.Editor editor = prefs.edit();
+                                editor.putInt("ScoreKey", mGame.getMoveCount());
+                                editor.commit();
+                            }
+                            Intent intent = new Intent(getContext(), MainActivity.class);
+                            getContext().startActivity(intent);
+                        }
+                    });
+                }
+                else {
+                    SharedPreferences prefs = getContext().getSharedPreferences("highScore", Context.MODE_PRIVATE);
+                    if ((mGame.getMoveCount() < prefs.getInt("ScoreKey", 0)) || (prefs.getInt("ScoreKey", 0) == 0)) {
+                        SharedPreferences.Editor editor = prefs.edit();
+                        editor.putInt("ScoreKey", mGame.getMoveCount());
+                        editor.commit();
+                    }
+                    Intent intent = new Intent(getContext(), MainActivity.class);
+                    getContext().startActivity(intent);
+                }
             }
-            Intent intent = new Intent(getContext(), MainActivity.class);
-            getContext().startActivity(intent);
+            else {
+                SharedPreferences prefs = getContext().getSharedPreferences("highScore", Context.MODE_PRIVATE);
+                if ((mGame.getMoveCount() < prefs.getInt("ScoreKey", 0)) || (prefs.getInt("ScoreKey", 0) == 0)) {
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putInt("ScoreKey", mGame.getMoveCount());
+                    editor.commit();
+                }
+                Intent intent = new Intent(getContext(), MainActivity.class);
+                getContext().startActivity(intent);
+            }
         }
     }
 
