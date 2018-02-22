@@ -49,13 +49,13 @@ public class GameView extends View {
         TextView txtMoves = ((GameActivity) getContext()).findViewById(R.id.txtMoves);
         txtMoves.setText("Moves Remaining: " + mGame.getMovesRemaining());
 
-        sideLength = width/5;
+        sideLength = width/6;
         gridPaint.setStyle(Paint.Style.FILL);
         gridPaint.setAntiAlias(true);
 
         if (firstDraw) {
-            for(int i = 0; i < 5; i++) {
-                for(int j = 0; j < 5; j++) {
+            for(int i = 0; i < 6; i++) {
+                for(int j = 0; j < 6; j++) {
                     colour = colours[rand.nextInt(2)];
                     mGame.mData[i][j] = colour == colours[0];
                     gridPaint.setColor(colour);
@@ -63,7 +63,7 @@ public class GameView extends View {
                     rectanglex = sideLength * i;
                     rectangley = sideLength * j;
 
-                    rect = new Rect(rectanglex+(sideLength / 5), rectangley+(sideLength / 5), rectanglex+sideLength, rectangley+sideLength);
+                    rect = new Rect(rectanglex+(sideLength / 6), rectangley+(sideLength / 6), rectanglex+sideLength, rectangley+sideLength);
                     canvas.drawRect(rect, gridPaint);
 
                     firstDraw = false;
@@ -71,8 +71,8 @@ public class GameView extends View {
             }
         }
         else {
-            for(int i = 0; i < 5; i++) {
-                for(int j = 0; j < 5; j++) {
+            for(int i = 0; i < 6; i++) {
+                for(int j = 0; j < 6; j++) {
                     if (mGame.mData[i][j]) {
                         gridPaint.setColor(colours[0]);
                     }
@@ -84,7 +84,7 @@ public class GameView extends View {
                     rectanglex = sideLength * i;
                     rectangley = sideLength * j;
 
-                    rect = new Rect(rectanglex+(sideLength / 5), rectangley+(sideLength / 5), rectanglex+sideLength, rectangley+sideLength);
+                    rect = new Rect(rectanglex+(sideLength / 6), rectangley+(sideLength / 6), rectanglex+sideLength, rectangley+sideLength);
                     canvas.drawRect(rect, gridPaint);
                 }
             }
@@ -92,7 +92,7 @@ public class GameView extends View {
 
         if (mGame.checkWin()) {
             SharedPreferences prefs = getContext().getSharedPreferences("highScore", Context.MODE_PRIVATE);
-            if (mGame.getMoveCount() < prefs.getInt("ScoreKey", 0)) {
+            if ((mGame.getMoveCount() < prefs.getInt("ScoreKey", 0)) || (prefs.getInt("ScoreKey", 0) == 0)) {
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putInt("ScoreKey", mGame.getMoveCount());
                 editor.commit();
