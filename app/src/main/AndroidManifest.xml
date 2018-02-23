@@ -21,9 +21,13 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".GameActivity" />
-        <activity android:name=".adScreen" />
-        <activity android:name=".HowToPlayActivity"></activity>
+        <activity android:name=".GameActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".adScreen"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".HowToPlayActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
