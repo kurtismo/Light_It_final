@@ -35,6 +35,36 @@ public class MainActivity extends AppCompatActivity {
         ImageView playButton = findViewById(R.id.playIcon);
         playButton.setClickable(true);
 
+        ImageView star = findViewById(R.id.starLogo);
+        star.setClickable(true);
+
+        star.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mInterstitialAd.isLoaded()) {
+                    if (rand.nextInt(5) == 3) {
+                        mInterstitialAd.show();
+                        mInterstitialAd.setAdListener(new AdListener() {
+                            public void onAdClosed() {
+                                Intent intent = new Intent(MainActivity.this, adScreen.class);
+                                startActivity(intent);
+                            }
+                        });
+                    }
+                    else {
+                        Intent intent = new Intent(MainActivity.this, adScreen.class);
+                        startActivity(intent);
+                    }
+                }
+                else {
+                    Intent intent = new Intent(MainActivity.this, adScreen.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
+
+
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
