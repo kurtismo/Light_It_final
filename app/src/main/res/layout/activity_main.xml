@@ -19,37 +19,11 @@
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
     </com.google.android.gms.ads.AdView>
 
-    <ImageView
-        android:id="@+id/playIcon"
-        android:layout_width="339dp"
-        android:layout_height="291dp"
-        android:layout_marginBottom="84dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:contentDescription="@string/playButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_playlogo" />
-
-    <ImageView
-        android:id="@+id/playTitle"
-        android:layout_width="386dp"
-        android:layout_height="331dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/menuTitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adView"
-        app:srcCompat="@drawable/ic_logo" />
-
     <TextView
         android:id="@+id/txtScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/aclonica"
         android:text="Score: 0"
         android:textColor="@android:color/white"
@@ -59,5 +33,74 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playIcon" />
+
+    <TextView
+        android:id="@+id/lights"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="33dp"
+        android:fontFamily="@font/aldrich"
+        android:text="@string/Lights"
+        android:textColor="@color/flat_colour2"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adView" />
+
+    <TextView
+        android:id="@+id/out"
+        android:layout_width="119dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="33dp"
+        android:fontFamily="@font/aldrich"
+        android:text="@string/Out"
+        android:textColor="#FFFF"
+        android:textSize="60dp"
+        app:layout_constraintStart_toEndOf="@+id/lights"
+        app:layout_constraintTop_toBottomOf="@+id/adView" />
+
+    <ImageView
+        android:id="@+id/playIcon"
+        android:layout_width="312dp"
+        android:layout_height="300dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lights"
+        app:srcCompat="@drawable/ic_playlogo"
+        android:contentDescription="@string/playButton" />
+
+    <ImageView
+        android:id="@+id/starLogo"
+        android:layout_width="76dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/Lights"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtScore"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_starlogo" />
+
+    <ImageView
+        android:id="@+id/helpLogo"
+        android:layout_width="98dp"
+        android:layout_height="91dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/Out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/txtScore"
+        app:srcCompat="@drawable/ic_questionlogo" />
 
 </android.support.constraint.ConstraintLayout>
