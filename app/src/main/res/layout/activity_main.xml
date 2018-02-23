@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context="com.lonespark.lightit.MainActivity">
+    tools:context="com.lonespark.lightsout.MainActivity">
 
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
@@ -16,7 +16,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+        ads:adUnitId="ca-app-pub-3935766831192873/1214338890">
     </com.google.android.gms.ads.AdView>
 
     <TextView
@@ -55,6 +55,7 @@
         android:layout_width="119dp"
         android:layout_height="68dp"
         android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
         android:layout_marginTop="33dp"
         android:fontFamily="@font/aldrich"
         android:text="@string/Out"

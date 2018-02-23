@@ -1,4 +1,4 @@
-package com.lonespark.lightit;
+package com.lonespark.lightsout;
 
 import android.content.Context;
 import android.content.Intent;
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
         final InterstitialAd mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-3935766831192873/9148723139");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         ImageView playButton = findViewById(R.id.playIcon);
@@ -37,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView star = findViewById(R.id.starLogo);
         star.setClickable(true);
+
+        ImageView rules = findViewById(R.id.helpLogo);
+        rules.setClickable(true);
+
+
 
         star.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +68,30 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        rules.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mInterstitialAd.isLoaded()) {
+                    if (rand.nextInt(5) == 3) {
+                        mInterstitialAd.show();
+                        mInterstitialAd.setAdListener(new AdListener() {
+                            public void onAdClosed() {
+                                Intent intent = new Intent(MainActivity.this, HowToPlayActivity.class);
+                                startActivity(intent);
+                            }
+                        });
+                    }
+                    else {
+                        Intent intent = new Intent(MainActivity.this, HowToPlayActivity.class);
+                        startActivity(intent);
+                    }
+                }
+                else {
+                    Intent intent = new Intent(MainActivity.this, HowToPlayActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override

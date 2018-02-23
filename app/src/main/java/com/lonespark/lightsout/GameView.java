@@ -1,4 +1,4 @@
-package com.lonespark.lightit;
+package com.lonespark.lightsout;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,7 +9,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.support.annotation.Nullable;
-import android.support.constraint.solver.widgets.Rectangle;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -22,7 +21,6 @@ import com.google.android.gms.ads.InterstitialAd;
 
 import java.util.Random;
 
-import static java.lang.Math.PI;
 import static java.lang.Math.floor;
 
 
@@ -41,7 +39,7 @@ public class GameView extends View {
         super(context, attrs);
 
         mInterstitialAd = new InterstitialAd(getContext());
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-3935766831192873/9148723139");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         gridPaint = new Paint();

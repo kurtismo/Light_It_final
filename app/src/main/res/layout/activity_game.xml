@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#5A5A5A"
-    tools:context="com.lonespark.lightit.GameActivity">
+    tools:context="com.lonespark.lightsout.GameActivity">
 
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
@@ -16,10 +16,10 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+        ads:adUnitId="ca-app-pub-3935766831192873/1214338890">
     </com.google.android.gms.ads.AdView>
 
-    <com.lonespark.lightit.GameView
+    <com.lonespark.lightsout.GameView
         android:id="@+id/custView"
         android:layout_width="0dp"
         android:layout_height="416dp"

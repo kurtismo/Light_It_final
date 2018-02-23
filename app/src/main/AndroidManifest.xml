@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lonespark.lightit">
+    package="com.lonespark.lightsout">
 
     <application
         android:allowBackup="true"
@@ -22,7 +22,8 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".GameActivity" />
-        <activity android:name=".adScreen"></activity>
+        <activity android:name=".adScreen" />
+        <activity android:name=".HowToPlayActivity"></activity>
     </application>
 
 </manifest>

@@ -1,11 +1,13 @@
 <resources>
-    <string name="app_name">LightIt</string>
+    <string name="app_name">Lights Out</string>
     <string name="menu"></string>
     <string name="playButton">Play button</string>
     <string name="menuTitle">Title for app</string>
     <string name="Lights">Lights</string>
     <string name="Out">Out</string>
     <string name="thanks">Thank you!</string>
+    <string name="HowToPlay">Rules</string>
+    <string name="HowToPlayMessage">The aim of Lights Out is to make every square in the game blue. \n\n When you hit a square, it will switch colour, as will every adjacent square. \n\n Sound easy? I promise it\'s not. \n\n Have fun!</string>
     <string name="thanksMessage">So, if you\'re reading this it means you\'ve downloaded our app and for that we\'d like to say a massive thank you! We
     really appreciate the support and we hope our games keep you entertained! Head over to LoneSparkApps on the Play Store to keep up to date with our latest releases!
     </string>

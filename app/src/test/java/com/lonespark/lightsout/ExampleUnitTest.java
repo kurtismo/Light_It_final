@@ -1,4 +1,4 @@
-package com.lonespark.lightit;
+package com.lonespark.lightsout;
 
 import org.junit.Test;
 

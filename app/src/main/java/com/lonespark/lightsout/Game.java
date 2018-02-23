@@ -1,4 +1,4 @@
-package com.lonespark.lightit;
+package com.lonespark.lightsout;
 
 
 public class Game {
